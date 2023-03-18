@@ -1,5 +1,16 @@
 h1 {
     text-align: center;
+    font-family: 'Rubik Iso', cursive;
+    color: rgb(240, 240, 240);
+    font-size: 85px;
+    padding: 35px;
+    font-stretch:extra-expanded;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Sono', sans-serif;
+  font-size: 35px;
 }
 
 .center {
@@ -8,12 +19,59 @@ h1 {
     margin-right: auto;
 }
 
+.line-0 {
+  margin-top: -55px;
+  height: 100%;
+  background: rgba(54, 54, 54, 0.404);
+}
+
+.line-1 {
+  height: 3px;
+  background: rgb(151, 151, 151);
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+h3 {
+  font-family: 'Sono', sans-serif;
+  word-spacing: normal;
+}
+
+p {
+  font-family: 'Sono', sans-serif;
+  word-spacing: normal;
+}
+
 figure {
     padding: 4px;
     margin: auto;
   }
+
+  img {
+    box-shadow: 10px 10px 10px black;
+    padding: 4px;
+  }
   
   figcaption {
-    padding: 2px;
     text-align: center;
+    font-size: 25px;
+  }
+  body {
+    background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(179, 179, 169));
+  }
+
+  .section-box {
+    max-width: 70%;
+    display: block;
+    background-color:white;
+    border-radius: 25px;
+    border-style: groove;
+    border-color: #747474;
+    border-width: 5px;
+    padding: 25px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    overflow: auto;
+    font-family: 'Work Sans';
   }
