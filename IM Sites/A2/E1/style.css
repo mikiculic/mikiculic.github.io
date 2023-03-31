@@ -1,0 +1,132 @@
+/*---------------------------------------------------------MAIN BODY---------------------------------------------------------*/
+*{
+    box-sizing: border-box;
+}
+
+/* This root class groups my entire colour palette that I will be using for the design system. 
+I have a variety of colours that span between red, pink and purple. The main reason I chose these colours 
+was because I believe they provide a very large variety of colours that blend well with gradients, allowing 
+me to pull three different colours from a similar tone. I will be using each of these specific colours to produce 
+gradients across each grid block. */
+:root{
+    --col01: #F36364;
+    --col02: #F29191;  
+    --col03: #FF0000;
+    --col04: #E580cf;
+    --col05: #E59FD6;
+    --col06: #FF00C8;
+    --col07: #9A0079;
+    --col08: #ED9CD6;
+    --col09: #FF0088;
+}
+
+/* For the main body, I decided to use a neutral pink in order to have a nice balance when the heavier
+colours are added on top. */
+body{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: lightpink;
+}
+
+
+/*---------------------------------------------------------FIRST ROW---------------------------------------------------------*/
+
+/* Referencing the Akira Pg.167, I used the same dimensions and used auto width and margins, in order to have
+the design scale across different screen sizes. (Applied to each set) */
+#set1{
+    display: grid;
+    width: auto;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 20px;
+    height: 500px;
+    grid-template-columns: 1.5fr 2.75fr;
+    grid-template-rows: 1.5fr 1fr;
+}
+
+/* Using a gradient made out of my root colour palette, I created a flow of colours between each grid cell. Using
+the ending and starting value of each cell, I continued the same gradient through all first row of grid cells. */
+#set1-one{
+    background-image: linear-gradient(to right, var(--col01),var(--col02));
+    border: 2px solid black;
+    margin-right: 10px;
+    grid-row: 1/3;
+    grid-column: 1/1;
+
+}
+
+/* --col02 is used at the end of set1-one and the start of set1-two. */
+#set1-two{
+    background-image: linear-gradient(to right, var(--col02), var(--col03));
+    border: 2px solid black;
+    margin-bottom: 10px;
+    grid-column: 2/3;
+    grid-row: 1/1;
+}
+
+/* A separate gradient is used for set1-three compared to set1-two as these two cells are not bridging to one another. */
+#set1-three{
+    background-image: linear-gradient(to right, var(--col02), var(--col03));
+    border: 2px solid black;
+    margin-top: 10px;
+    grid-column: 2/3;
+    grid-row: 2/2;
+}
+
+
+/*---------------------------------------------------------SECOND ROW---------------------------------------------------------*/
+
+/* Only difference to set1 is the height of the cells, in order to conform to the original reference. */
+#set2{
+    display: grid;
+    width: auto;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 20px;
+    height: 450px;
+    grid-template-columns: 1fr 3fr .7fr;
+    grid-template-rows: 1fr;
+}
+
+/* Moving from red, I decided to pan to a purple palette, and having the dark end meet at the same
+point as the ending of the red gradient. */
+#set2-one{
+    background-image: linear-gradient(to right, var(--col04), var(--col05));
+    border: 2px solid black;
+}
+
+#set2-two{
+    background-image: linear-gradient(to right, var(--col05), var(--col06));
+    border: 2px solid black;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* This specific column ended up working perfectly without any interference, but the original 
+plan was to have this last column end with the complete dark shade as it is a very short column 
+right at the end of the cells, which it turned out to use the full darker purple part of the gradient. */
+#set2-three{
+    background-image: linear-gradient(to right, var(--col06), var(--col07));
+    border: 2px solid black;
+}
+
+
+/*---------------------------------------------------------THIRD ROW---------------------------------------------------------*/
+
+/* This set includes the smallest grid cell, with a height of 350px. */
+#set3{
+    display: grid;
+    width: auto;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 350px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+/* This row uses one single gradient of a very light pink (almost white), and leads to a hot pink. */
+#set3-one{
+    background-image: linear-gradient(to right, var(--col08), var(--col09));
+    border: 2px solid black;
+}
+
