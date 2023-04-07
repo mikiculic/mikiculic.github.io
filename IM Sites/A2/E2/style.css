@@ -1,0 +1,117 @@
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+/* I decided to grab the original purple and expanded to different shades, as I believe it matched well with the grey background. */
+:root{
+  --col-01:#c282ff;
+  --col-02:#5252ff;
+  --col-03:#7777fc;
+  --col-04:#9452ff;
+  --col-05:#222323ff;
+  --col-06:#ffffff;
+  --border: 1px solid var(--col-02);
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--col-05);
+  color: var(--col-06);
+  padding: 2vw;
+}
+
+.heading{
+  text-align: center;
+  margin-bottom: 1%;
+}
+
+figure {
+ text-align: center;
+}
+
+/* Using ID's, I grouped each specific filter to a colour, which I used as a design decision to 
+assist the visual aid of the sight, so users can better find the specific filter they are looking for, 
+even when using the filter options at the top of the page.*/
+#sum1{
+  color: var(--col-01);
+}
+
+#sum2{
+  color: var(--col-02);
+}
+
+#sum3 {
+  color: var(--col-03);
+}
+
+#sum4 {
+  color: var(--col-04);
+}
+
+figcaption{
+  text-align: center;
+  margin-bottom: 1%;
+}
+
+.RecipeBox{
+  display: flex;
+  flex-direction: column;
+  border: var(--border);
+}
+
+.FilterSection{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.FilterBox{
+margin: 0.5%;
+}
+
+/* I opted to use a grid attribute instead of flex. I thought this would work better when 
+laying out the positioning of the grouped information. */
+.Info{
+display: grid;
+width: auto;
+text-align: center;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.RecipeLink{
+  margin-top: 1%;
+  margin-bottom: 1%;
+  text-align: center;
+}
+
+.RecipeName{
+  font-size: 30px;
+  text-align: center;
+  margin-top: 1%;;
+  margin-bottom: 1%;;
+}
+
+.Author{
+  margin-bottom: 1%;
+  text-align: center;
+  background-color: var(--col-01);
+}
+
+.Cuisine{
+ background-color: var(--col-02);
+}
+
+.SkillLevel{
+ background-color: var(--col-03);
+}
+
+.Dietary{
+ background-color: var(--col-04);
+}
+
+
+
