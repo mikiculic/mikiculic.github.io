@@ -1,0 +1,228 @@
+/*
+  This one CSS file is imported into both index.html AND hosono.html so you need to be careful that it 
+  works for both.
+*/
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+:root{
+  /* first two colours come from Kuroi's Manga Pallete Palette */
+  /* https://lospec.com/palette-list/manga-pallete */
+  --col-01:#171219;
+  --col-02:#f2fbeb;
+  --col-03:#5252ff;
+  --col-04:#b6e878;
+  font-size: 16px;
+  /* scroll behaviour makes the <a> links to ids scroll to position over time rather than immediately */
+  scroll-behavior: smooth;
+}
+
+/* Here I created a class to disable transition, so I could use javascript to ensure the transition for light/dark 
+mode does not play when the page loads */
+.onload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+body{
+  padding: 1rem;
+  background-color: var(--col-02);
+  color: var(--col-01);
+}
+
+/* Simple fade transition for the dark/light mode. I used a simple fade as I believe it is easier on the eyes when it 
+transitions, so it does not just jarringly flicked between different states. It also allows the user to visually see how their input has effected the site.*/
+#darkTransition{
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav li{
+  font-size: 1rem;
+}
+
+section{
+  margin-bottom: 2rem;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+p{
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+figcaption{
+  width: fit-content;
+}
+
+dl ul{
+  margin-bottom: 0;
+}
+
+li{
+  font-size: 1rem;
+}
+
+dd{
+  padding-left: 60px;
+}
+
+li ul{
+  padding-left: 40px;
+}
+
+.img-wrapper{
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.img-figure{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-img{
+  width: 80%;
+}
+
+.res-columns{
+  column-width: 25rem;
+}
+
+#mode-button{
+  float: right;
+  /* note the use of position: sticky to keep the button on the page even with scrolling */
+  position: sticky;
+  top: 1rem;
+}
+
+/* Here I again decided to the hover and active tags, where I changed the cursor into a pointer, as 
+well as added background changes to when the user presses or hovers the button. This is a very simple but 
+effective way to inform the user that their input has been registered.*/
+#mode-button:hover{
+  border: 0;
+  cursor: pointer;
+  border-width: 50px;
+  border-radius: 10px;
+  background-color: #5252ff;
+}
+
+#mode-button:active{
+background-color: rgb(54, 54, 54);
+}
+
+
+
+/* code for loading page */
+
+/* Here I decided again to use the simple hover tag, whre I change the cursor to a pointer, 
+aswell as change the font size to alert the user that this menu is interactable. Without changing the style of the site, I believe 
+this is a decent way of providing feedback to the user.*/
+#hoverFeedback1:hover, #hoverFeedback2:hover, #hoverFeedback3:hover, #hoverFeedback4:hover, #hoverFeedback5:hover, #hoverFeedback6:hover{
+  cursor: pointer;
+  font-size: 115%;
+}
+
+#load-body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* changing button to look like a link */
+#load-link{
+  line-height: 1rem;
+  background-color: transparent;
+  border: 0;
+  border-radius: 10px;
+}
+
+/* Here I have just used basic colour changes using the hover and active tags. 
+When it comes to a button, I believe that simple feedback such as colour changes is 
+a non-instrusive way of letting the user know something is interactable */
+#load-link:hover{
+  background-color: lightskyblue;
+}
+
+#load-link:active{
+  background-color: blue;
+}
+
+/* throbber while page is fake loading */
+/* I decided to change the loading bar to a spinning circle, as I believe it is a more modern 
+and recognised approach to a loading symbol. It also allows for an infinte loop until the page loads, 
+rather than having to sync up a loading bar to the fake load time */
+#load-throbber{
+  width: 60px;
+  height: 60px;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid grey;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  display: none;
+}
+
+/* Here I have setup a keyframe rule to determine the starting and end 
+point of my loading wheel, which will loop throught the loading screen, 
+of which the speed of the animation is defined within the throbber tag*/
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Media Queries */
+
+/* medium devices 600 - 992 */
+@media only screen and (min-width: 600px) {
+  :root{
+    font-size: 20px;
+  }
+  
+  .img-wrapper{
+    width: 75%;
+    margin: 1.5rem auto;
+  }
+
+}
+
+/* medium devices 992 + */
+@media only screen and (min-width: 992px) {
+  :root{
+    font-size: 24px;
+  }
+
+  .img-wrapper{
+    max-width: fit-content;
+    float: right;
+    margin: 1.5rem;
+  }
+
+}
+
+@media (prefers-reduced-motion) {
+  :root{
+    scroll-behavior: auto;
+  }
+}
