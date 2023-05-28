@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* The base of the lights positioning. I also use the body to apply the transitions for the dark mode effect. */
+body{
+    background-color: #f8e7fd;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    filter: brightness(100%);
+    transition: background-color 1s, filter 1s;
+}
+
+/* Dark mode class that toggle the dim effect on the light switch */
+.dark-mode{
+    background-color: #111111;
+    filter: brightness(10%);
+}
+
+.light{
+    position: relative;
+    width: 50px;
+    height: 100px;
+}
+
+/* Used https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow as a reference to get more advanced box shadows, instead of simple black backdrops */
+.light label{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    background: #cbc7bc;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 0 white, 0 0 0 1px #999, 0 0 5px 1px rgba(0,0,0,0.2), 0 2px 0 rgba(255,255,255, 0.6), inset 0 10px 1px #e5e5e5, inset 0 11px 0 rgba(255,255,255, 0.5), inset 0 -45px 3px #ddd;
+}
+
+/* Originally, I had the idea of having the entire webpage be the light switch panel with the switch in the middle, but I instead decided to add a 
+smaller switch with a purple panel in the center of the page, as I believed it worked better with the dim effect, as well as feeling more natural in 
+terms of interacting and getting feedback from a light switch */
+.light label:after{
+    content: "";
+    position:absolute;
+    top: -120px;
+    left: -95px;
+    bottom: -120px;
+    right: -95px;
+    background: linear-gradient(#efbbff, #d896ff);
+    z-index: -1;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.15), 0 3px 3px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.5);
+}
+
+/* Used to ensure there is a hitbox for the actual switch, while also removing the visibility of the checkbox that is used for the interaction. */
+.light input{
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* The second state of the switch of when it is flipped. This ensure there are 2 different states for the switch, which 
+assists in the feedback the user recieves when pressing it, as they can visibly see the swithc flip. */
+.light input:checked ~ label {
+    background: #d2cbc3;
+    box-shadow: inset 0 1px 0 white, 0 0 0 1px #999, 0 0 5px 1px rgba(0,0,0,0.2), inset 0 -10px 0 #aaa, 0 2px 0 rgba(255,255,255,0.1), inset 0 45px 3px #e0e0e0, 0 8px 6px rgba(0,0,0, 0.18);
+}
+

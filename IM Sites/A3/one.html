@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Switch</title>
+        <audio id="click" src="sounds/lightswitch.wav"></audio>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/light.css">
+    </head>
+    <body class="dark-mode">
+        <div class="light"><input type="checkbox" onclick="darkMode(), play()">
+            <label>
+            </label>
+        </div>
+        <!-- I opted to use internal JavaScript here as there were only 2 lines of code that I would only be using on this page -->
+        <script>
+            //This dark mode function is made to toggle the light switch between a dimmed state and bright.
+            function darkMode() {
+                var element = document.body;
+                element.classList.toggle("dark-mode");
+            }
+            //Used to play the clicky sound when the switch is flipped.
+            function play() {
+                var sound = document.getElementById("click");
+                click.currentTime = 0;
+                sound.play();
+                }
+        </script>
+    </body>
+</html>

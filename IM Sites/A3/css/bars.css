@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #efbbff;
+}
+
+/* Again I used the same pink shade colour scheme through the design of the bars to ensure consistency. The spacing of the 
+bars are very simple and have a very simple interaction with a line of text at the top of the page, as it would be quite confusing 
+of what to do with out that information. */
+.container {
+    display: flex;
+    height: 500px;
+    margin-top: 5%;
+    justify-content: center;
+    gap: 10%;
+}
+
+.bar {
+    width: 100px;
+    background-color: #f3d0fd;
+    position: relative;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.15), 0 3px 3px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.5);
+}
+
+.progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #d896ff;
+    height: 0;
+    transition: height 0.3s;
+}
+
+#info{
+    margin-top: 5%;
+    text-align: center;
+    color: #bb3737a6;
+    font-size: 40px;
+    text-decoration: none;
+    font-family: 'Sono', sans-serif;
+    letter-spacing: .001em;
+}

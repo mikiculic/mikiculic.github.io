@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+#mainHome{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 100vh;
+}
+
+
+
+#text1 {
+    margin: auto;
+}
+#text2 {
+    margin: auto;
+}
+#text3 {
+    margin: auto;
+}
+
+
+/* Features of the text over each panel. These settings are in place to ensure it 
+has a simple look so the user knows exactly what they will be clicking into, with an appealing look */
+a{   
+    color: #bb3737a6;
+    font-size: 40px;
+    text-decoration: none;
+    font-family: 'Sono', sans-serif;
+    letter-spacing: .01em;
+}
+
+/* Each panels width is changed on hover to provide mouse feedback, so the user knows which one will be clicked into 100% if the press the mouse.*/
+/* Left panel */
+#set1{
+    display: flex;
+    background-color: #efbbff;
+    grid-column: 1/1;
+    grid-row: 1/1;
+}
+#set1:hover {
+    width: 715px;
+    font-size: 55px;
+    cursor: pointer;
+    background-color: #d896ff;
+}
+
+
+/* I used the middle column as a base to seperate the others, using borders on each side. This will assist the user visually to be able to tell where each section is. */
+#set2{
+    display: flex;
+    background-color: #efbbff;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    grid-column: 2/2;
+    grid-row: 1/1;
+}
+#set2:hover {
+    width: 715px;
+    font-size: 55px;
+    cursor: pointer;
+    background-color: #d896ff;
+}
+
+
+
+/* Right panel */
+#set3{
+    display: flex;
+    background-color: #efbbff;
+    grid-column: 3/3;
+    grid-row: 1/1;
+}
+#set3:hover {
+    width: 715px;
+    font-size: 55px;
+    cursor: pointer;
+    background-color: #d896ff;
+}
+

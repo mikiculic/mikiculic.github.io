@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+    <head>
+        <title>Pop</title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/script.js"></script>
+        <!-- I opted to use internal CSS here as it is simply just the basic container and settings of 
+        the circle. The rest is done in JavaScript as there are a lot of components needed to make the circles random and displayed effectivly -->
+        <style>
+            /* With this page, I chose to continue the same colour scheme to keep it consistent */
+            body {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #f7dbff;
+            }
+
+            #container {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+            }
+            
+            .circle {
+                position: absolute;
+                background-color: #d896ff;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            .circle:hover {
+                transform: scale(1.1);
+            }
+          </style>
+    </head>
+    <body>
+        <!-- Container to hold all the circles that will be displayed. -->
+        <div id="container"></div>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+    <head>
+        <title>Bars</title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>@import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&family=Sono&display=swap');</style>
+        <link rel="stylesheet" href="css/bars.css">
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <div id="info">Try scrolling over a bar...</div>
+        <!-- Container to hold all the bars -->>
+        <div class="container">
+            <div class="bar" id="bar1">
+                <div class="progress"></div>
+            </div>
+            <div class="bar" id="bar2">
+                <div class="progress"></div>
+            </div>
+            <div class="bar" id="bar3">
+                <div class="progress"></div>
+            </div>
+            <div class="bar" id="bar4">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <!-- I again opted to use internal Javascript as it was mainly needed for the event listner that records the users scrolling input. -->>
+        <script>
+            // This function is used to create event listeners for when the users enter/leave and scroll on each bar, and is needed as I have used 4 bars instead of just 1.
+            const bars = document.querySelectorAll('.bar');
+            bars.forEach(bar => {
+                bar.addEventListener('mouseenter', () => {
+                    window.addEventListener('wheel', barFill);
+                });
+                bar.addEventListener('mouseleave', () => {
+                    window.removeEventListener('wheel', barFill);
+                });
+            });
+            // This function is what grabs each bar and updates the height of the pink colour, based on the 
+            // progress that the bar has already got (height = 0px or if it has already been increased previously.)
+            function barFill(event) {
+                const targetBar = event.target.closest('.bar');
+                const progress = targetBar.querySelector('.progress');
+                let newHeight = Math.min(500, progress.offsetHeight - event.deltaY);
+                newHeight = Math.max(0, newHeight);
+                progress.style.height = newHeight + 'px';
+            }
+            </script>
+    </body>
+</html>
