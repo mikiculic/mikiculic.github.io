@@ -80,3 +80,43 @@ a{
     background-color: #d896ff;
 }
 
+
+/* Simple box designs to create the pop-up menu on page load.*/
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    text-align: center;
+  }
+  
+  .popup-content {
+    color: #ee3737a6;
+    font-family: 'Sono', sans-serif;
+    background-color: #f3d0fd;
+    width: 900px;
+    margin: 4% auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .popup-close {
+    background-color: #d896ff;
+    color: #bb3737a6;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #zenLink {
+    color: blue;
+    font-family: 'Sono', sans-serif;
+    font-size: 16px;
+    text-decoration: underline;
+  }

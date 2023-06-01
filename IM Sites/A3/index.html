@@ -9,6 +9,35 @@
         <script src="script.js"></script>
     </head>
     <body>
+        <div class="popup-container">
+            <div class="popup-content">
+              <h2>Hey There!!!</h2>
+              <p>On this site, you will be able to engage with a few interactions that serve as a sort of fidget toy. This can be used for things as simple as boredom, stress-relief or even for just some fun to pass the time. The interactions you will engage with require very little effort and are there to provide satisfying visuals and audio to help achieve your desired effect. The main purpose of the design is to leave the user feeling stimulated in a satisfying manner,as well as provide meaningful feedback when interacting with this experience through all the playful ways it provides. This site was inspired by <a id="zenLink" href="https://thezen.zone/">https://thezen.zone/</a>.
+                <br><br>When creating this site, I focused on two main elements to create a playful, interactive experience that provides satisfying elements while also giving meaningful input feedback to both resonate with as well as direct the user.
+                <br><br>Visuals play a crucial role in capturing attention and conveying information. Well designed visuals, such as aesthetically pleasing color schemes, simplistic layouts and visually appealing graphics, can create a positive impression and make the content more memorable and thus leave a greater impact on the user. Visuals can also evoke specific emotions or set a desired mood, influencing the user's perception and experience of the design. With this in mind, I decided to create a simple pink/purple color scheme that is consistent across the entire webpage, that allows the user to feel familiarized with the site on entry. Animations are used across the page to provide visual feedback for almost all elements within the page, to ensure the user knows exactly what they will be clicking on when interacting.
+                <br><br>Audio on the other hand, can greatly enhance the user experience as a whole. Pleasant sounds or carefully placed sound effects can create an experience that engages the user in ways visuals may not be able to. Sound can evoke emotions, guide interactions, but most importantly for this project, assist in providing input feedback to the user. By incorporating satisfying audio effects in my design, it both achieves the impact I would like to leave on the user, as well as making the user experience more responsive and understandable by providing input feedback. The sounds provided are simple, yet effective enough to provide the desired effect as well as remaining relevant to the actual element the sound is linked to.
+                </p>
+              <button class="popup-close">OK</button>
+            </div>
+          </div>
+          <!-- I opted to use internal Javascript here as it is just used for the load event, as well as function of the pop-up on load. -->
+          <script>
+            function showPopup() {
+              var popup = document.querySelector('.popup-container');
+              popup.style.display = 'block';
+            }
+            function closePopup() {
+              var popup = document.querySelector('.popup-container');
+              popup.style.display = 'none';
+            }
+            window.addEventListener('load', function() {
+              showPopup();
+            });
+            var closeButton = document.querySelector('.popup-close');
+            closeButton.addEventListener('click', function() {
+              closePopup();
+            });
+          </script>
         <div id ="mainHome">
         <a id="set1" href="one.html"><div id="text1">Switch</div></a>
         <a id="set2" href="two.html"><div id="text2">Pop</div></a>
